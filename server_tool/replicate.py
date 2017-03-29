@@ -7,7 +7,7 @@ segments = [
 ]
 
 # listen for a packet on port 80
-syn = sniff(count=1, filter='tcp and host 192.168.97.148 and port 80')
+syn = sniff(count=1, filter='tcp and host ' + sys.argv[1] + ' and port 80')
 
 src_ip = syn[0][IP].src
 src_port = syn[0][TCP].sport
